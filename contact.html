@@ -1,0 +1,172 @@
+<?php
+session_start();
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <header>
+
+        <div class="log">
+            <i class='bx bx-menu menu-i'></i> 
+            <span class="logo-name">Woodpecker</span>
+        </div>
+        <div class="sidebar">
+            <div class="log">
+                <i class='bx bx-menu menu-i'></i> 
+                <span class="logo-name">Woodpecker</span>
+            </div>
+           
+            </div>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a  href="home.php">Home</a></li>
+            <li><a href="indexCart.php" >Shop</a></li>
+            
+            <li><a href="about.php">About</a></li>
+            <li><a href="blog.php">Blog</a></li>
+            <li><a href="faq.php">FAQ</a></li>
+            <li><a class="active" href="contact.php">Contact</a></li>
+            <div>
+                <?php
+                $count=0;
+                if(isset($_SESSION['cart']))
+                {
+                    $count=count($_SESSION['cart']);
+                }
+                ?>
+            <li><a href="mycart.php">My Cart (<?php echo $count; ?>)</a></li>
+            </div>
+            <li><a href="index.php">Logout</a></li>
+        </ul>
+       
+    
+    </header>
+    <section id="page-header" class="contact-header">
+        <h2>let's Talk</h2>
+        <p>LEAVE A MEASSAGE. We love to hear from you!</p>
+    </section>
+    <section id="contact-details" class="section-p1"sec>
+        <div class="details">
+            <span>GET IN TOUCH</span>
+            <h2>Visit  our agency location or contact us today!</h2>
+        <h3>Head Office</h3>
+        <div>     
+            <li>
+                <i class='bx bx-location-plus'></i>
+                <p>C 72/3, Afsar Garden, Mojidpur, Rajashon Road,  Savar Union 1340</p>
+            </li>
+            <li>
+                <i class='bx bx-envelope' ></i>
+                <p>nowshin@gmail.com</p>
+            </li>
+            <li>
+                <i class='bx bxs-phone' ></i>
+                <p>+880 17527242</p>
+            </li>
+            <li>
+                <i class='bx bx-time' ></i>
+                <p>Sunday to Thursday: 9.00am to 10.00pm</p>
+            </li>
+        </div>
+        </div>
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.1738257023503!2d90.25818351493501!3d23.847960484541314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755ebd2ed1ea2dd%3A0xe3083c853337da05!2sAfsar%20Garden%2C%20C%2072%2F3%2C%20Afsar%20Garden%2C%20Mojidpur%2C%20Rajashon%20Road%2C%20C%2072%2F3%20Rajashon%20Rd%2C%20Savar%20Union%201340!5e0!3m2!1sen!2sbd!4v1666522603432!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+        </div>
+    </section>
+  
+   <section id="form-details">
+    <form action="mail.php" method="POST">
+        <span>LEAVE A MESSAGE</span>
+        <h2>We love to hear from you!</h2>
+        <input type="text" id="name" name="name" placeholder="Your Name">
+        <input type="email" id="email" name="email" placeholder="Email">
+        <input type="text" id="subject" name="subject"  placeholder="Subject">
+        <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+        <button class="normal">Submit</button>
+    </form>
+    
+   </section>
+
+   <footer id="back" class="section-p1">
+    <div class="col">
+       <!-- <img class="logo" src="images/log.png" alt=""">"-->
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> C-72/3,Bazar Road</p>
+        <p><strong>Phone:</strong> +01 227 885/+880 175272</p>
+        <p><strong>Hours:</strong> 8:00am-6pm,Sat-Thurs</p>
+        <div class="follow">
+            <h4>Follow us</h4>
+            <div class="icon">
+                <i class='bx bxl-facebook'></i>
+                <i class='bx bxl-instagram' ></i>
+                <i class='bx bxl-youtube' ></i>
+                <i class='bx bxl-pinterest' ></i>
+                <i class='bx bxl-twitter' ></i>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <h4>My account</h4>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        <a href="#">My wishlist</a> 
+        <a href="#">Track my order</a>
+        <a href="#">Help</a>
+    </div>
+    <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Policy</a> 
+        <a href="#">Terms and condition</a>
+        <a href="#">Contact us</a>
+    </div>
+   <div class="col install">
+    <h4>Install App</h4>
+    <p>From App store or google play</p>
+   <!-- <div class="row">
+        <img src="images/app.png" alt="">
+        <img src="images/google.png" alt="">
+    </div> -->
+    <p>secured payment gateway</p>
+    <!--<img src="images/Cap.PNG" alt="">-->
+    </div>
+    <div class="copyright">
+        <p> 2022,tech2 etc - HTML CSS Ecomerce Template</p>
+    </div>
+   </footer>
+   <script src="script.js"></script>
+  <!-- <script src=" https://smtpjs.com/v3/smtp.js"></script>-->
+
+
+
+
+
+<script>
+    const navBar = document.querySelector("header"),
+    menuBtns = document.querySelectorAll(".menu-i"),
+    overlay = document.querySelector(".overlay");
+
+    menuBtns.forEach(menuBtns => {
+      menuBtns.addEventListener("click", () => {
+          navBar.classList.toggle("open");
+      });
+    });
+   overlay.addEventListener("click", () => {
+      navBar.classList.remove("open");
+   })
+   </script>
+</body>
+</html>
